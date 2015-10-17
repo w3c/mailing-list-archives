@@ -1,0 +1,20 @@
+/* Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+   The following software licensing rules apply:
+   http://www.w3.org/Consortium/Legal/copyright-software */
+
+/* $Id: public-message.css,v 1.23 2015/01/06 20:28:42 ylafon Exp $ */
+
+/* W3C Message Archive - public message */
+
+@import url(/StyleSheets/base.css);
+@import url(/StyleSheets/Mail/message.css);
+
+/* Leave message itself white but rest
+** of metadata very pale grey
+**  Note the public background is white so here we only need to set grey
+*/
+
+body { color: black; background: #eee; } 
+
+/* ... */
+

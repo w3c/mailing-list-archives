@@ -1,0 +1,27 @@
+/* Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+   The following software licensing rules apply:
+   http://www.w3.org/Consortium/Legal/copyright-software */
+
+/* $Id: messagelist.css,v 1.5 2003/09/04 21:02:16 dom Exp $ */
+
+/* Common submodule for all message lists
+**
+** Used in {team,member,public}-messagelist.css
+**
+*/
+
+
+
+
+
+/* li { font-size: 80% ; font-family: sans-serif } */
+
+
+/* li li { font-size: 100% } don't ripple down getting smaller */
+
+dfn {font-weight: bold;}
+map ul {list-style:none;}
+.messages-list {
+  border-top:thin solid black;
+  border-bottom:thin solid black;
+}

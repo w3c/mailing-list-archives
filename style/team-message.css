@@ -1,0 +1,14 @@
+/* Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+   The following software licensing rules apply:
+   http://www.w3.org/Consortium/Legal/copyright-software */
+
+/* $Id: team-message.css,v 1.4 2003/01/21 05:58:38 slesch Exp $ */
+
+/* Team archive message */
+
+@import url(/StyleSheets/team.css);
+
+@import url(/StyleSheets/Mail/message.css);
+
+/* ... */
+

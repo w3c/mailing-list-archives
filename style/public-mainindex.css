@@ -1,0 +1,21 @@
+/* Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+   The following software licensing rules apply:
+   http://www.w3.org/Consortium/Legal/copyright-software */
+
+/* $Id: public-mainindex.css,v 1.23 2003/01/21 02:50:51 slesch Exp $ */
+
+/* Style sheet for Public email archives 
+**
+** Example page: 
+**   http://lists.w3.org/Archives/Public/www-talk/
+**
+** This file was empty - it needed something tbl
+*/
+
+@import url(/StyleSheets/base.css);
+
+@import url(/StyleSheets/Mail/mainindex.css);
+
+
+
+

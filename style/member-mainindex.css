@@ -1,0 +1,14 @@
+/* Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+   The following software licensing rules apply:
+   http://www.w3.org/Consortium/Legal/copyright-software */
+
+/* $Id: member-mainindex.css,v 1.4 2003/01/21 02:50:51 slesch Exp $ */
+
+/* Main index for Member archives */
+
+@import url(/StyleSheets/member.css);
+
+@import url(/StyleSheets/Mail/mainindex.css) ;
+
+
+

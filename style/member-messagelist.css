@@ -1,0 +1,13 @@
+/* Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+   The following software licensing rules apply:
+   http://www.w3.org/Consortium/Legal/copyright-software */
+
+/* $Id: member-messagelist.css,v 1.5 2003/01/21 02:55:31 slesch Exp $ */
+
+/* @@ */
+
+@import url(/StyleSheets/member.css);
+@import url(messagelist.css);
+
+/* --- */
+

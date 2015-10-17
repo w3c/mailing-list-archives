@@ -1,0 +1,25 @@
+/* Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+   The following software licensing rules apply:
+   http://www.w3.org/Consortium/Legal/copyright-software */
+
+/* $Id: public-messagelist.css,v 1.13 2003/09/12 18:42:24 slesch Exp $ */
+
+/* @@ */
+
+@import url(/StyleSheets/base.css);
+
+
+
+body { color: #000000; background-color: #FFFFFF}
+
+/* li { font-size: 90% ; font-family: sans-serif } */
+
+
+/* li li { font-size: 100% } */  /* don't ripple down getting smaller */
+
+dfn {font-weight: bold;}
+map ul {list-style:none;}
+.messages-list {
+  border-top:thin solid black;
+  border-bottom:thin solid black;
+}
