@@ -71,7 +71,7 @@ you a pointer to a view of the archives that you despise.)
 
 A few specific things I think we should do next:
 
-  - expose info about message threads as json objects
+  - [expose info about message threads as json objects](../../issues/2)
 
   - add a reference to a javascript library to each of our
     archive pages, to allow for experimenting with things like
