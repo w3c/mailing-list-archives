@@ -77,7 +77,7 @@ A few specific things I think we should do next:
     archive pages, to allow for experimenting with things like
     a thread widget and a thread flattener.
 
-  - in parallel, start working on improving the default
-    style of our archives.
+  - in parallel, [start working on improving the default
+    style of our archives](../../issues/1).
 
   - install hyperkitty somewhere to get some experience with it.
