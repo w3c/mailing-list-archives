@@ -6,8 +6,8 @@
 
 /* W3C Message Archive - public message */
 
-@import url(/StyleSheets/base.css);
-@import url(/StyleSheets/Mail/message.css);
+@import url(base.css);
+@import url(message.css);
 
 /* Leave message itself white but rest
 ** of metadata very pale grey
