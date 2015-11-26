@@ -1,0 +1,189 @@
+/* Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+   The following software licensing rules apply:
+   http://www.w3.org/Consortium/Legal/copyright-software */
+
+/* adapted from: */
+/* $Id: public-message.css,v 1.23 2015/01/06 20:28:42 ylafon Exp $ */
+/* W3C Message Archive - public message */
+
+/* much of this has not been reviewed and can go away */
+
+body {
+  font-family: sans-serif;
+  color: black;
+  line-height: 1.2em;
+}
+
+a:link, a:active {
+  color: #00e;
+  background: transparent;
+}
+
+a:visited {
+  color: #529;
+  background: transparent;
+}
+
+div.intro {
+  margin-left: 5%;
+  margin-right: 5%;
+  font-style: italic
+}
+
+a:link img, a:visited img {
+   border-style: none
+}
+
+ul.toc, ol.toc {
+  list-style: disc;
+  list-style: none;
+}
+
+div.issue {
+  padding: 0.5em;
+  border: none;
+  margin-right: 5%;
+}
+
+.hideme { display: none }
+
+@media print {
+
+  table {
+    page-break-inside: avoid
+  }
+
+}
+
+
+/* want to be able to identify the author and style it
+** but can't
+*/
+
+dfn {font-weight: bold;}
+.mail, .head { border-bottom:1px solid black;}
+map ul {list-style:none;}
+#message-id { font-size: small;}
+address { font-style:inherit ;}
+
+@media print {
+ #upper, #navbarfoot, #navbar {
+  display:none;
+}
+}
+
+/* for edited messages */
+div.edit {
+ background: #CCFF99;
+ padding: 0.25em 2em 0.25em 1em;
+ margin-top: 0.25em;
+}
+p.editmes{
+ font-style: italic;
+ font-size: small;
+ padding: 0;
+}
+p.editfooter{
+ font-size: small;
+ padding: 0;
+}
+
+/* for deleted messages */
+div.spam {
+ background: #aaffaa;
+ padding: 1em 2em;
+}
+p.spammes{
+ font-size: x-large;
+ font-weight: bold;
+}
+p.spamfooter{
+ font-size: small;
+}
+
+div#body {
+    display: block;
+    unicode-bidi: embed;
+    font-family: monospace;
+    white-space: pre;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    background: white;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+div#body a {
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+div.col-md-4 {
+    padding: 0;
+}
+
+div.message {
+    width: 100%;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+body, .navbar-static-bottom { background: #eee; }
+
+
+/* ************************************* */
+/* temporary stuff for debugging follows */
+/* ************************************* */
+
+
+
+/* rules to test other bgcolors (member, team)
+
+body, .navbar-static-bottom { background: #e2edfe; }
+body, .navbar-static-bottom { background: #fff6e0; }
+
+*/
+
+
+
+/* uncomment to test scrolling
+
+body {
+  min-height: 2000px;
+}
+
+/*
+
+
+
+/* uncomment the following to see which divs are where
+
+div.col-md-8 {
+    background: #f7f0f0;
+}
+
+div.col-md-4 {
+    background: #f0f7f0;
+}
+
+div.container {
+    background: #f0f0f7;
+}
+
+body {
+    background: #fafafa;
+}
+
+*/
+
