@@ -81,7 +81,8 @@ We could use contributions in a number of areas:
   tracked/discussed as [issue #1](../../issues/1). Existing proposals:
 
   * [a mockup of an updated message
-    page](../../samples/message-proposal-1.html) from @[gosko](/gosko)
+    page](https://w3c.github.io/mailing-list-archives/samples/message-proposal-1.html)
+    from @[gosko](/gosko)
 
 - markup to display the structure of a message thread along with
   a message. This needs to work well with threads that contain
@@ -96,7 +97,7 @@ We could use contributions in a number of areas:
 
 ### Javascript code
 
-We could also use javascript code to provide more advanced
+We could also use some javascript code contributions to provide more advanced
 functionality, such as:
 
 - retrieving, parsing and displaying [JSON thread info](../../issues/2)
