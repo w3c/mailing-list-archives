@@ -31,16 +31,18 @@ rel="stylesheet">
 
 <div class="container-fluid">
 
-<div id="navbar" class="navbar-collapse collapse">
-<ul class="nav navbar-nav">
+<ul class="nav navbar-nav nav-pills">
   <li><a href="http://www.w3.org/">W3C</a></li>
-  <li><a href="https://lists.w3.org/">Lists</a></li>
-  <li><a href="https://lists.w3.org/Archives/Public/">Public</a></li>
+  <li><a href="https://lists.w3.org/"
+      class="hidden-xs">Lists</a></li>
+  <li><a href="https://lists.w3.org/Archives/Public/"
+      class="hidden-xs">Public</a></li>
   <li><a href="https://lists.w3.org/Archives/Public/ietf-http-wg/">ietf-http-wg</a></li>
-  <li><a href="https://lists.w3.org/Archives/Public/ietf-http-wg/2015OctDec/">October to December 2015</a></li>
+  <li><a href="https://lists.w3.org/Archives/Public/ietf-http-wg/2015OctDec/"
+      class="hidden-xs">October to December 2015</a></li>
 </ul>
 
-<form class="navbar-form navbar-right">
+<form class="navbar-form navbar-right hidden-xs">
 <div class="form-group">
   <input type="text" class="form-control" size="40"
   placeholder="Search this archive">
@@ -48,13 +50,13 @@ rel="stylesheet">
 <button type="submit" class="btn btn-default">Search</button>
 </form>
 
-</div><!-- /.nav-collapse -->
 
 </div><!-- /.container-fluid -->
 
 </nav>
 
-<div class="container message">
+<div class="container-fluid message">
+<div class="row">
 
 <div class="col-md-8">
 
@@ -69,26 +71,6 @@ rel="stylesheet">
 <!-- id="CAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg@mail.gmail.com" -->
 <!-- charset="UTF-8" -->
 <!-- expires="-1" -->
-<map name="navbar">
-<ul class="links">
-<li>
-<dfn>This message</dfn>:
-[ <a href="#start173" id="options1" tabindex="1">Message body</a> ]
- [ <a href="mailto:ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;?Subject=Re%3A%20Streams%20after%20receiving%20GOAWAY&amp;In-Reply-To=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E&amp;References=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E" accesskey="r" title="respond to this message">Respond</a> ]
- [ <a href="#options3">More options</a> ]
-</li>
-<li>
-<dfn>Related messages</dfn>:
-<!-- unext="start" -->
-[ <a href="0174.html" title="Cory Benfield: &quot;Re: Streams after receiving GOAWAY&quot;">Next message</a> ]
-[ <a href="0172.html" title="Willy Tarreau: &quot;Re: Revising RFC6265 (&#0034;Cookies&#0034;)&quot;">Previous message</a> ]
-<!-- unextthread="start" -->
- [ <a href="0174.html" title="Cory Benfield: &quot;Re: Streams after receiving GOAWAY&quot;">Next in thread</a> ]
- [ <a href="#replies">Replies</a> ]
-<!-- ureply="end" -->
-</li>
-</ul>
-</map>
 <!-- body="start" -->
 <div class="message">
 <div class="headers">
@@ -122,38 +104,53 @@ with any conforming implementation, am I missing something?
 Thanks,
 Glen
 </div><!--/#body-->
-</div><!--/.message-->
+
+<p>
 <span id="received"><dfn>Received on</dfn> Sunday, 15 November 2015 10:24:44 UTC</span><br />
 <span id="message-id"><dfn>Message-ID</dfn>: &lt;CAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg&#64;mail.gmail.com&gt;</span>
+</p>
+
+</div><!--/.message-->
 <!-- body="end" -->
-<map id="navbarfoot" name="navbarfoot" title="Related messages">
-<ul class="links">
-<li><dfn>This message</dfn>: [ <a href="#start173">Message body</a> ]</li>
-<!-- lnext="start" -->
-<li><dfn>Next message</dfn>: <a href="0174.html" title="Next message in the list">Cory Benfield: "Re: Streams after receiving GOAWAY"</a></li>
-<li><dfn>Previous message</dfn>: <a href="0172.html" title="Previous message in the list">Willy Tarreau: "Re: Revising RFC6265 (&#0034;Cookies&#0034;)"</a></li>
-<!-- lnextthread="start" -->
-<li><dfn>Next in thread</dfn>: <a href="0174.html" title="Next message in this discussion thread">Cory Benfield: "Re: Streams after receiving GOAWAY"</a></li>
-<li><a id="replies"></a><dfn>Reply</dfn>:  <a href="0174.html" title="Message sent in reply to this message">Cory Benfield: "Re: Streams after receiving GOAWAY"</a></li>
-<li><dfn>Reply</dfn>:  <a href="0176.html" title="Message sent in reply to this message">Patrick McManus: "Re: Streams after receiving GOAWAY"</a></li>
-<!-- lreply="end" -->
-</ul>
-<ul class="links">
-<li><a id="options3"></a><dfn>Mail actions</dfn>: [ <a href="mailto:ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;?Subject=Re%3A%20Streams%20after%20receiving%20GOAWAY&amp;In-Reply-To=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E&amp;References=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E">respond to this message</a> ] [ <a href="mailto:ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;">mail a new topic</a> ]</li>
-<li><dfn>Contemporary messages sorted</dfn>: [ <a href="index.html#msg173" title="Contemporary messages by date">by date</a> ] [ <a href="thread.html#msg173" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg173" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg173" title="Contemporary messages by author">by author</a> ]</li>
-<li><dfn>Help</dfn>: [ <a href=
-   "/Help/" accesskey="h" rel="help">How to use the archives</a> ] [ <a href=
-   "https://www.w3.org/Search/Mail/Public/search?type-index=ietf-http-wg&amp;index-type=t">Search in the archives</a> ]
-</li></ul>
-</map>
+
+<p>Contemporary messages sorted by:
+  <a href="index.html#msg173">date</a>,
+  <a href="thread.html#msg173">thread</a>,
+  <a href="subject.html#msg173">subject</a>,
+  <a href="author.html#msg173">author</a>
+</p>
+
+<p></p>
+
+<p>
+This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.1</a>:
+Sunday, 15 November 2015 10:24:47 UTC
+</p>
+
+<p><a href="https://lists.w3.org/Help/" accesskey="h"
+rel="help">How to use these archives</a></p>
+
+
 </div><!-- /.col-md-8 -->
 
 <div class="col-md-4">
 
-<p>&nbsp;</p>
+<div class="actions btn-group btn-group-justified">
+
+<a class="btn btn-default" href="0174.html" title="Next message in this thread">Next message</a>
+
+<a class="btn btn-default"
+href="mailto:ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;?Subject=Re%3A%20Streams%20after%20receiving%20GOAWAY&amp;In-Reply-To=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E&amp;References=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E"
+accesskey="r" title="Reply to this message">Reply</a>
+
+<a class="btn btn-default" href="mailto:ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;" title="Start a new topic">New topic</a>
+
+</div><!-- /.actions -->
+
 <p>&nbsp;</p>
 
-<p><a class="btn btn-default pull-right" href="http://www.w3.org/Mail/flatten/index?subject=https%3A%2F%2Flists.w3.org%2FArchives%2FPublic%2Fietf-http-wg%2F2015OctDec%2F0173.html&amp;list=">Enflatten</a></p>
+<p><a class="btn btn-default pull-right" href="http://www.w3.org/Mail/flatten/index?subject=https%3A%2F%2Flists.w3.org%2FArchives%2FPublic%2Fietf-http-wg%2F2015OctDec%2F0173.html&amp;list=">Flatten</a></p>
 
 <p>This thread:</p>
 
@@ -194,16 +191,14 @@ Glen
   </li>
  </ul>
 </div>
+
 </div><!-- /.col-md-4 -->
+
+</div><!-- /.row -->
 
 </div><!-- /.container -->
 
 <div class="container-fluid">
-<p>
-This archive was generated by
-<a href="http://www.hypermail-project.org/">hypermail 2.3.1</a>:
-Sunday, 15 November 2015 10:24:47 UTC
-</p>
 </div><!-- /.container-fluid -->
 
 <hr>
@@ -221,6 +216,13 @@ original message in our archives</a> for comparison.</p>
 <p>This is not a complete proposal, only a quick conversion to HTML5 and
 bootstrap, with a thread pane and search box added.
 <p>
+
+<p>Switch background colors:
+<a href="#" onMouseOver="body.style.background='#eee'">public</a>,
+<a href="#" onMouseOver="body.style.background='#e2edfe'">member</a>,
+<a href="#" onMouseOver="body.style.background='#fff6e0'">team</a>.
+(requires js)
+</p>
 
 </div><!-- /.container -->
 
