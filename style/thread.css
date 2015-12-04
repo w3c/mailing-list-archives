@@ -1,7 +1,8 @@
 /* source: http://jsfiddle.net/Fh47n/ http://stackoverflow.com/a/15480307 */
 
 .thread li {
-    margin: 0px -15px;
+    margin: 0;
+    margin-left: -15px;
     list-style-type: none;
     position: relative;
     padding: 3px 5px 0px 0px;
