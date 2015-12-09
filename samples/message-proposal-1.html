@@ -81,29 +81,46 @@ rel="stylesheet">
 <span id="to"><dfn>To:</dfn> HTTP Working Group &lt;<a href="mailto:ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;?Subject=Re%3A%20Streams%20after%20receiving%20GOAWAY&amp;In-Reply-To=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E&amp;References=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E">ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;</a>&gt;
 </span><br />
 </div><!--/.headers-->
-<div id="body"><a accesskey="j" id="start173"></a>I'm about to deliberately violate the letter of a MUST NOT because I
+
+<div id="body-wrapper">
+<div id="body" class="plain"><a accesskey="j" id="start173"></a>I'm about to deliberately violate the letter of a MUST NOT because I
 believe it's overly strict.
 
-&quot;Receivers of a GOAWAY frame MUST NOT open additional streams on the
-connection...&quot;
+> &quot;Receivers of a GOAWAY frame MUST NOT open additional streams on the connection...&quot;
 
 When my server wants to close a connection it sends a GOAWAY with last
-stream id set to a value somewhat higher than anything it has received. It
+stream id set to a value _somewhat higher than anything it has received_. It
 then keeps the connection until the reported last id is reached or enough
-time goes by.
+time goes by [1]. For reference: http://example.com/foo
 
-When the client gets a GOAWAY it will immediately start establishing a new
-connection, continue issuing new requests up to the reported last id, and
+    $ ls
+    a.txt foo.md higher-number.docx
+    $ rm foo.md
+
+Also:
+```javascript
+container.removeClass('rich').addClass('plain');
+```
+
+When the client gets a GOAWAY **it will immediately start establishing a new
+connection**, continue issuing new requests up to the reported last id, and
 close the old connection when it either has a new connection or has used
-all the reported streams.
+all the reported streams[1][2].
 
-The goal is to avoid suspending requests in a high volume server to server
-environment while waiting for new connections. I don't see how it conflicts
-with any conforming implementation, am I missing something?
+The goal is:
+* to avoid suspending requests in a high volume server to server environment
+* while waiting for new connections.
+
+I don't see how it conflicts with any conforming implementation, am I missing something?
 
 Thanks,
 Glen
+
+[1] https://w3.org/foo/bar.html
+[2] http://WWW.archive.org/
 </div><!--/#body-->
+<div id="overlay"><a href="#">Remove formatting</a></div>
+</div><!--/#body-wrapper-->
 
 <p>
 <span id="received"><dfn>Received on:</dfn> Sunday, 15 November 2015 10:24:44 UTC</span><br />
@@ -226,6 +243,9 @@ bootstrap, with a thread pane and search box added.
 
 </div><!-- /.container -->
 
+<script type="text/javascript" src="//www.w3.org/scripts/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/markdown-it/5.0.2/markdown-it.min.js"></script>
+<script type="text/javascript" src="../js/message-proposal-1.js"></script>
 </body>
 
 </html>
