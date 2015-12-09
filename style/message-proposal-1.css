@@ -16,6 +16,39 @@ body {
   line-height: 1.2em;
 }
 
+nav#gutter-top {
+  position:              fixed;
+  top:                   0;
+  left:                  0;
+  right:                 0;
+  height:                53px;
+  background-color:      #2975ac;
+  border:                none;
+  font-size:             larger;
+  color:                 #e0e0e0;
+}
+
+nav#gutter-top > .container-fluid {
+  padding-left:          0;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color:                 #e0e0e0;
+}
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:active {
+  color:                 #ffffff;
+}
+
+.navbar-default .navbar-nav li:first-child a {
+  padding:               0;
+}
+
+div#main {
+  margin-top:            73px;
+}
+
 a:link, a:active {
   color: #00e;
   background: transparent;
