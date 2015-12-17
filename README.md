@@ -83,6 +83,7 @@ We could use contributions in a number of areas:
   * [a mockup of an updated message
     page](https://w3c.github.io/mailing-list-archives/samples/message-proposal-1.html)
     from @[gosko](/gosko)
+  * _your proposal goes here!_
 
 - markup to display the structure of a message thread along with
   a message. This needs to work well with threads that contain
@@ -93,7 +94,7 @@ We could use contributions in a number of areas:
   markup fixes we should consider what usability improvements we
   can make by adding more advanced features, even if they prove
   to be infeasible. Upvote/downvote features? Inline textareas
-  for responses? Please submit any ideas you might have!
+  for responses? Please [submit any ideas](../../issues/) you might have!
 
 ### Javascript code
 
