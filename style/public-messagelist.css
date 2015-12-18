@@ -10,16 +10,34 @@
 
 
 
-body { color: #000000; background-color: #FFFFFF}
+body {
+  color: #000;
+  background-color: #fff;
+}
 
-/* li { font-size: 90% ; font-family: sans-serif } */
+/*
+li {
+  font-size: 90%;
+  font-family: sans-serif;
+}
+*/
 
 
-/* li li { font-size: 100% } */  /* don't ripple down getting smaller */
+/* don't ripple down getting smaller
+li li {
+  font-size: 100%;
+}
+*/
 
-dfn {font-weight: bold;}
-map ul {list-style:none;}
+dfn {
+  font-weight: bold;
+}
+
+map ul {
+  list-style: none;
+}
+
 .messages-list {
-  border-top:thin solid black;
-  border-bottom:thin solid black;
+  border-top: thin solid black;
+  border-bottom: thin solid black;
 }

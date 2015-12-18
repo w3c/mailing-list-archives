@@ -18,7 +18,8 @@ body {
   background: white;
 }
 
-a:link, a:active {
+a:link,
+a:active {
   color: #00e;
   background: transparent;
 }
@@ -31,23 +32,30 @@ a:visited {
 div.intro {
   margin-left: 5%;
   margin-right: 5%;
-  font-style: italic
+  font-style: italic;
 }
 
 pre {
-  font-family: monospace
+  font-family: monospace;
 }
 
-a:link img, a:visited img {
-   border-style: none
+a:link img,
+a:visited img {
+   border-style: none;
 }
 
-a img { color: white; }        /* hide the border in Netscape 4 */
-@media all {                   /* hide from Netscape 4 */
-  a img { color: inherit; }    /* undo the rule above */
+a img {
+  color: white; /* hide the border in Netscape 4 */
 }
 
-ul.toc, ol.toc {
+@media all { /* hide from Netscape 4 */
+  a img {
+    color: inherit; /* undo the rule above */
+  }
+}
+
+ul.toc,
+ol.toc {
   list-style: disc;
   list-style: none;
 }
@@ -58,12 +66,12 @@ div.issue {
   margin-right: 5%;
 }
 
-.hideme { display: none }
+.hideme {
+  display: none;
+}
 
 @media print {
-
   table {
-    page-break-inside: avoid
+    page-break-inside: avoid;
   }
-
 }

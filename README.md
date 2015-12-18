@@ -72,6 +72,8 @@ you a pointer to a view of the archives that you despise.)
 
 ## How to contribute
 
+Please make use of the [`.editorconfig`](./.editorconfig) file in your editor to keep our code formatting consistent.
+
 ### Style/markup improvements
 
 We could use contributions in a number of areas:
@@ -115,4 +117,3 @@ functionality, such as:
   of our archives, so we can get feedback from a wide variety of
   users without disrupting existing usage. (as discussed in the
   [Evolutionary](#evolutionary) section above)
-
