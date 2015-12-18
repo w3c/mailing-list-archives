@@ -4,7 +4,7 @@
 
 /* $Id: message.css,v 1.30 2013/03/27 19:07:35 kahan Exp $ */
 
-/* Style submodule - W3C Message Archive -   message 
+/* Style submodule - W3C Message Archive -   message
 **
 ** see *-message.css
 **
@@ -21,13 +21,14 @@
 */
 
 body {
-       margin:  20px;   /* 40px from base is too high */
+  margin: 20px;   /* 40px from base is too high */
+}
 
- } 
-
-pre {  color: black; background-color: white; 
-     padding: 0.5em ; }
-
+pre {
+  color: black;
+  background-color: white;
+  padding: 0.5em;
+}
 
 pre {
   white-space: pre-wrap;       /* css-3 */
@@ -35,58 +36,94 @@ pre {
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+; makes the CSS invalid :( */
- }
-
+}
 
 /* Not too big on the heading - they can be long */
 
-h1 { font-size: 150% }
+h1 {
+  font-size: 150%;
+}
 
 /* want to be able to identify the author and style it
 ** but can't
 */
 
-dfn {font-weight: bold;}
+dfn {
+  font-weight: bold;
+}
+
 /* pre { background-color:inherit;} */
-.mail, .head { border-bottom:1px solid black;}
-#body {background-color:#fff;}
-map ul {list-style:none;}
-/* #message-id { font-size:0.9em;} */
-#message-id { font-size: small;}
-address { font-style:inherit ;}
-/* #from { font-size:1.1em;} */
+
+.mail,
+.head {
+  border-bottom: 1px solid black;
+}
+
+#body {
+  background-color: #fff;
+}
+
+map ul {
+  list-style: none;
+}
+
+/*
+#message-id {
+  font-size: 0.9em;
+}
+*/
+
+#message-id {
+  font-size: small;
+}
+
+address {
+  font-style: inherit;
+}
+
+/*
+#from {
+  font-size: 1.1em;
+}
+*/
 
 @media print {
- #upper, #navbarfoot, #navbar {
-  display:none;
-}
+  #upper,
+  #navbarfoot,
+  #navbar {
+    display: none;
+  }
 }
 
 /* for edited messages */
 div.edit {
- background: #CCFF99;
- padding: 0.25em 2em 0.25em 1em;
- margin-top: 0.25em;
+  background: #CCFF99;
+  padding: 0.25em 2em 0.25em 1em;
+  margin-top: 0.25em;
 }
+
 p.editmes{
- font-style: italic;
- font-size: small;
- padding: 0;
+  font-style: italic;
+  font-size: small;
+  padding: 0;
 }
+
 p.editfooter{
- font-size: small;
- padding: 0;
+  font-size: small;
+  padding: 0;
 }
 
 /* for deleted messages */
 div.spam {
- background: #aaffaa;
- padding: 1em 2em;
+  background: #aaffaa;
+  padding: 1em 2em;
 }
+
 p.spammes{
- font-size: x-large;
- font-weight: bold;
+  font-size: x-large;
+  font-weight: bold;
 }
+
 p.spamfooter{
- font-size: small;
+  font-size: small;
 }

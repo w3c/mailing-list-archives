@@ -14,7 +14,7 @@
 **  Note the public background is white so here we only need to set grey
 */
 
-body { color: black; background: #eee; } 
-
-/* ... */
-
+body {
+  color: black;
+  background: #eee;
+}
