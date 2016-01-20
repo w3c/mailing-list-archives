@@ -37,12 +37,10 @@ We could use contributions in a number of areas:
 - [simple markup improvements to the current archives](../../issues/1):
   HTML5, mobile-friendly; think non-controversial changes. This is
   tracked/discussed as [issue #1](../../issues/1). Existing proposals:
-
   * [a mockup of an updated message
     page](https://w3c.github.io/mailing-list-archives/samples/message-proposal-1.html)
     from @[gosko](/gosko)
   * _your proposal goes here!_
-
 - markup to display the structure of a message thread along with
   a message. This needs to work well with threads that contain
   anywhere from 3 messages to 200 messages or more. (but probably
@@ -50,7 +48,6 @@ We could use contributions in a number of areas:
   [@gosko](/gosko)'s
   [proposal](https://w3c.github.io/mailing-list-archives/samples/message-proposal-1.html)
   includes a sample of what this might look like.
-
 - radical proposals for better archive UIs: in addition to simple
   markup fixes we should consider what usability improvements we
   can make by adding more advanced features, even if they prove
@@ -64,16 +61,12 @@ functionality, such as:
 
 - retrieving, parsing and displaying [a message's thread
   structure](../../issues/2) in a useful way.
-
 - code to show or hide the thread structure along with a message.
-
 - code to switch to/from a flattened view of a message thread.
-
 - code to [intelligently prettify an email
   message](https://github.com/w3c/mailing-list-archives/issues/1#issuecomment-173371579)
   (switch to proportional font, judiciously hide quoted text,
   allow quoted text to be toggled visible/invisible)
-
 - code to allow for efficient navigation of message threads
   using simple keystrokes a la gmail.
 
@@ -85,13 +78,10 @@ topics such as:
 
 - [should we continue to use
   hypermail?](https://github.com/w3c/mailing-list-archives/issues/8)
-
 - [what should archived messages look like by
   default?](https://github.com/w3c/mailing-list-archives/issues/1)
-
 - [what is the best way to integrate a flattened view of message
   threads?](https://github.com/w3c/mailing-list-archives/issues/9)
-
 - [should we add some kind of thread navigation
   widget?](https://github.com/w3c/mailing-list-archives/issues/2)
 
