@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Streams after receiving GOAWAY from Glen Knowles on 2015-11-15 (ietf-http-wg@w3.org from October to December 2015)</title>
+
+<meta name="Author" content="Glen Knowles (gknowles&#x40;&#0105;&#0101;&#0101;&#0101;&#0046;&#0111;&#0114;&#0103;)" />
+<meta name="Subject" content="Streams after receiving GOAWAY" />
+<meta name="Date" content="2015-11-15" />
+
+<link href="https://www.w3.org/scripts/bootstrap/3.3/css/bootstrap.css"
+rel="stylesheet">
+
+<link href="../style/message-proposal-1.css" rel="stylesheet">
+<link href="../style/thread.css" rel="stylesheet">
+
+<link rel="help" href="/Help/" />
+<link rel="start" href="../" title= "ietf-http-wg@w3.org archives" />
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-static-top">
+
+<div class="container-fluid">
+
+<ul class="nav navbar-nav nav-pills">
+  <li><a href="http://www.w3.org/">W3C</a></li>
+  <li><a href="https://lists.w3.org/"
+      class="hidden-xs">Lists</a></li>
+  <li><a href="https://lists.w3.org/Archives/Public/"
+      class="hidden-xs">Public</a></li>
+  <li><a href="https://lists.w3.org/Archives/Public/ietf-http-wg/">ietf-http-wg</a></li>
+  <li><a href="https://lists.w3.org/Archives/Public/ietf-http-wg/2015OctDec/"
+      class="hidden-xs">October to December 2015</a></li>
+</ul>
+
+<form class="navbar-form navbar-right hidden-xs">
+<div class="form-group">
+  <input type="text" class="form-control" size="40"
+  placeholder="Search this archive">
+</div>
+<button type="submit" class="btn btn-default">Search</button>
+</form>
+
+
+</div><!-- /.container-fluid -->
+
+</nav>
+
+<div class="container-fluid message">
+<div class="row">
+
+<div class="col-md-8">
+
+<h1>Streams after receiving GOAWAY</h1>
+<!-- received="Sun Nov 15 10:24:44 2015" -->
+<!-- isoreceived="20151115102444" -->
+<!-- sent="Sun, 15 Nov 2015 02:24:15 -0800" -->
+<!-- isosent="20151115102415" -->
+<!-- name="Glen Knowles" -->
+<!-- email="gknowles&#x40;&#0105;&#0101;&#0101;&#0101;&#0046;&#0111;&#0114;&#0103;" -->
+<!-- subject="Streams after receiving GOAWAY" -->
+<!-- id="CAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg@mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<!-- body="start" -->
+<div class="message">
+<form id="options">
+    <input id="markdown" type="checkbox" checked="checked">
+    <label for="markdown">
+        <img src="../img/markdown-logo.png" alt="Markdown logo" /> Markdown formatting
+    </label>
+</form>
+<div class="headers">
+<span id="from">
+<dfn>From</dfn>: Glen Knowles &lt;<a href="mailto:gknowles&#x40;&#0105;&#0101;&#0101;&#0101;&#0046;&#0111;&#0114;&#0103;?Subject=Re%3A%20Streams%20after%20receiving%20GOAWAY&amp;In-Reply-To=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E&amp;References=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E">gknowles&#x40;&#0105;&#0101;&#0101;&#0101;&#0046;&#0111;&#0114;&#0103;</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 15 Nov 2015 02:24:15 -0800</span><br />
+<span id="to"><dfn>To</dfn>: HTTP Working Group &lt;<a href="mailto:ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;?Subject=Re%3A%20Streams%20after%20receiving%20GOAWAY&amp;In-Reply-To=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E&amp;References=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E">ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;</a>&gt;
+</span><br />
+</div><!--/.headers-->
+<div id="body"><a accesskey="j" id="start173"></a>I'm about to deliberately violate the letter of a MUST NOT because I
+believe it's ~~overly~~ quite strict.
+
+> &quot;Receivers of a GOAWAY frame MUST NOT open additional streams on the
+> connection...&quot;
+
+When my server wants to close a connection it sends a GOAWAY with last
+stream id set to a value _somewhat higher than anything it has received_. It
+then keeps the connection until the reported last id is reached or enough
+time goes by [1]. For reference: http://example.com/foo
+
+    $ ls
+    a.txt foo.md higher-number.docx
+    $ rm foo.md
+
+Also:
+```javascript
+container.removeClass('rich').addClass('plain');
+```
+
+When the client gets a GOAWAY **it will immediately start establishing a new
+connection**, continue issuing new requests up to the reported last id, and
+close the old connection when it either has a new connection or has used
+all the reported streams[1][2].
+
+The goal is:
+* to avoid suspending requests in a high volume server to server environment
+* while waiting for new connections.
+
+I don't see how it conflicts with any conforming implementation, am I missing something?
+
+Thanks,
+Glen
+
+[1] https://w3.org/foo/bar.html
+[2] http://WWW.archive.org/
+</div><!--/#body-->
+
+<p>
+<span id="received"><dfn>Received on</dfn> Sunday, 15 November 2015 10:24:44 UTC</span><br />
+<span id="message-id"><dfn>Message-ID</dfn>: &lt;CAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg&#64;mail.gmail.com&gt;</span>
+</p>
+
+</div><!--/.message-->
+<!-- body="end" -->
+
+<p>Contemporary messages sorted by:
+  <a href="index.html#msg173">date</a>,
+  <a href="thread.html#msg173">thread</a>,
+  <a href="subject.html#msg173">subject</a>,
+  <a href="author.html#msg173">author</a>
+</p>
+
+<p></p>
+
+<p>
+This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.1</a>:
+Sunday, 15 November 2015 10:24:47 UTC
+</p>
+
+<p><a href="https://lists.w3.org/Help/" accesskey="h"
+rel="help">How to use these archives</a></p>
+
+
+</div><!-- /.col-md-8 -->
+
+<div class="col-md-4">
+
+<div class="actions btn-group btn-group-justified">
+
+<a class="btn btn-default" href="0174.html" title="Next message in this thread">Next message</a>
+
+<a class="btn btn-default"
+href="mailto:ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;?Subject=Re%3A%20Streams%20after%20receiving%20GOAWAY&amp;In-Reply-To=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E&amp;References=%3CCAJCH0yBs5LxvYmgvbLHX7NgSptfBUF4TB7tw_OeuyFpTiiLbUg%40mail.gmail.com%3E"
+accesskey="r" title="Reply to this message">Reply</a>
+
+<a class="btn btn-default" href="mailto:ietf-http-wg&#x40;&#0119;&#0051;&#0046;&#0111;&#0114;&#0103;" title="Start a new topic">New topic</a>
+
+</div><!-- /.actions -->
+
+<p>&nbsp;</p>
+
+<p><a class="btn btn-default pull-right" href="http://www.w3.org/Mail/flatten/index?subject=https%3A%2F%2Flists.w3.org%2FArchives%2FPublic%2Fietf-http-wg%2F2015OctDec%2F0173.html&amp;list=">Flatten</a></p>
+
+<p>This thread:</p>
+
+<div class="thread">
+<ul>
+  <li><a href="#" class="current">Glen Knowles (Nov 15)</a>
+  <ul>
+   <li><a href="#">Cory Benfield (Nov 15)</a>
+   <ul>
+    <li><a href="#">Glen Knowles (Nov 15)</a>
+    <ul>
+     <li><a href="#">Cory Benfield (Nov 15)</a>
+     <ul>
+      <li><a href="#">Glen Knowles (Nov 15)</a>
+      <ul>
+       <li><a href="#">Matthew Kerwin (Nov 16)</a></li>
+       <li><a href="#">Eitan Adler (Nov 15)</a></li>
+       <li><a href="#">Willy Tarreau (Nov 16)</a></li>
+       <li><a href="#">Amos Jeffries (Nov 16)</a>
+	<ul>
+	<li><a href="#">Stefan Eissing (Nov 16)</a></li>
+	</ul>
+       </li>
+      </ul>
+     </li>
+     </ul>
+    </li>
+    </ul>
+    </li>
+   </ul>
+   </li>
+  <li><a href="#">Patrick McManus (Nov 15)</a>
+  <ul>
+    <li><a href="#">Mike Bishop (Nov 16)</a></li>
+   </ul>
+  </li>
+  </ul>
+  </li>
+ </ul>
+</div>
+
+</div><!-- /.col-md-4 -->
+
+</div><!-- /.row -->
+
+</div><!-- /.container -->
+
+<div class="container-fluid">
+</div><!-- /.container-fluid -->
+
+<hr>
+
+<div class="container alert alert-warning">
+
+<p>This page is an early draft of what an updated message page might look
+like in a <a href="https://github.com/w3c/mailing-list-archives">restyling
+of W3C's mailing list archives</a>.</p>
+
+<p>See <a
+href="https://lists.w3.org/Archives/Public/ietf-http-wg/2015OctDec/0173.html">the
+original message in our archives</a> for comparison.</p>
+
+<p>This is not a complete proposal, only a quick conversion to HTML5 and
+bootstrap, with a thread pane and search box added.
+<p>
+
+<p>Switch background colors:
+<a href="#" onMouseOver="body.style.background='#eee'">public</a>,
+<a href="#" onMouseOver="body.style.background='#e2edfe'">member</a>,
+<a href="#" onMouseOver="body.style.background='#fff6e0'">team</a>.
+(requires js)
+</p>
+
+</div><!-- /.container -->
+
+<script data-main="../js/base" src="https://www.w3.org/scripts/requirejs/2.1/require.min"></script>
+</body>
+
+</html>
