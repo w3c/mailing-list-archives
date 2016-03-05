@@ -251,3 +251,17 @@ div#body blockquote {
   font-style: italic;
   font-size: inherit;
 }
+
+/**
+ * Styles for gravatars
+ */
+
+#gravatar {
+  visibility: hidden;
+  float: right;
+  box-shadow: 0 4px 4px black;
+}
+
+#gravatar.active {
+  visibility: visible;
+}
