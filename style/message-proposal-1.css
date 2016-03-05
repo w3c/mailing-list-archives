@@ -204,6 +204,7 @@ div#main {
 
 /*
  * Styles for the Markdown formatting feature
+ * and for the collapsible thread feature
  */
 
 form#options {
@@ -216,12 +217,12 @@ form#options.active {
   display: block;
 }
 
-form#options img {
-  height: 1em;
-}
-
 form#options label {
   font-weight: normal;
+}
+
+form#options img {
+  height: 1em;
 }
 
 div#body:not(.rich) {
