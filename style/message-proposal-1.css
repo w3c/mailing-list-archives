@@ -126,7 +126,7 @@ h1 {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 
 body { background: #eee; }
