@@ -49,9 +49,15 @@ const init = function($, markdownit) {
             TR_UP_FULL = '&#9650;',
             TR_UP_EMPTY = '&#9651;',
             TR_DOWN_FULL = '&#9660;',
-            TR_DOWN_EMPTY = '&#9661;';
+            TR_DOWN_EMPTY = '&#9661;',
+            TITLE = $('h1'),
+            BODY = $('#body'),
+            SPINNER = $('#spinner'),
+            TREE = $('.thread'),
+            SELECTOR_LINKS = '.thread a';
 
-        var detailsVisible = true;
+        var detailsVisible = true,
+            cache = {};
 
         const toggleThread = function(event) {
             const OPTION = event.target.value;
@@ -93,6 +99,46 @@ const init = function($, markdownit) {
             }
         };
 
+        const processMessage = function(url) {
+            return function(data) {
+                const MESSAGE = $(data),
+                    NEW_TITLE = $('h1', MESSAGE).text(),
+                    NEW_BODY = $('#body', MESSAGE).text(),
+                    NEW_TREE = $('.thread', MESSAGE).html(),
+                    STATE = {title: NEW_TITLE, body: NEW_BODY, tree: NEW_TREE};
+                history.pushState(STATE, NEW_TITLE, url);
+                TITLE.text(NEW_TITLE);
+                BODY.text(NEW_BODY);
+                TREE.html(NEW_TREE);
+                $(SELECTOR_LINKS).click(navigate);
+            };
+        };
+
+        const handleError = function(data) {
+            window.alert('Error: could not load the message.');
+        };
+
+        const restore = function() {
+            TITLE.removeClass('inactive');
+            BODY.removeClass('inactive');
+            SPINNER.hide();
+            TREE.show();
+        };
+
+        const retrieveWithCache = function(url, done, fail, always) {
+            if (cache[url]) {
+                done(cache[url]);
+                always();
+            } else {
+                setTimeout(function() {
+                    $.get(url).done(function(data) {
+                        cache[url] = data;
+                        done(data);
+                    }).fail(fail).always(always);
+                }, 1500);
+            }
+        };
+
         const toggleDetails = function() {
             detailsVisible = !detailsVisible;
             if (detailsVisible) {
@@ -103,6 +149,37 @@ const init = function($, markdownit) {
                 GUTTER_GLYPH.html(TR_DOWN_EMPTY);
             }
             return false;
+        };
+
+        const navigate = function(event) {
+            const SELF = $(event.target);
+            if (!SELF.hasClass('current')) {
+                const URL = SELF.data('id') + '.html';
+                TITLE.addClass('inactive');
+                BODY.addClass('inactive');
+                SPINNER.show();
+                TREE.hide();
+                retrieveWithCache(URL, processMessage(URL), handleError, restore);
+            }
+            return false;
+        };
+
+        const back = function(event) {
+            if (!event || !event.state) {
+                window.alert('Error: could not navigate back to the previous message.');
+            } else {
+                TITLE.text(event.state.title);
+                BODY.text(event.state.body);
+                TREE.html(event.state.tree);
+                $(SELECTOR_LINKS).click(navigate);
+            }
+        };
+
+        const setUp = function() {
+            const STATE = {title: TITLE.text(), body: BODY.text(), tree: TREE.html()};
+            history.replaceState(STATE, TITLE.text(), document.location.href);
+            window.addEventListener('popstate', back);
+            $(SELECTOR_LINKS).click(navigate);
         };
 
         if (AUTHOR && AUTHOR.attr('Content')) {
@@ -126,6 +203,7 @@ const init = function($, markdownit) {
         ROW_GUTTER.removeClass('hidden');
         toggleDetails();
         OPTIONS.addClass('active');
+        setUp();
 
     });
 
