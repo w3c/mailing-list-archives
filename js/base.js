@@ -22,6 +22,8 @@ const processOriginal = function(original) {
 /**
  * Set up the page.
  *
+ * (CryptoJS extends the global object with the property 'CryptoJS'.)
+ *
  * @param {Function} $ the jQuery object.
  * @param {Function} markdownit the markdown-it object.
  */
@@ -38,7 +40,8 @@ const init = function($, markdownit) {
             ORIGINAL = MESSAGE.text(),
             ENHANCED = MDIT.render(processOriginal(ORIGINAL)),
             MESSAGE_CONTAINER = $('div#message-container'),
-            THREAD_CONTAINER = $('div#thread-container');
+            THREAD_CONTAINER = $('div#thread-container'),
+            AUTHOR = $('meta[name="Author"]');
 
         const toggleThread = function(event) {
             const OPTION = event.target.value;
@@ -63,6 +66,19 @@ const init = function($, markdownit) {
             }
         };
 
+        if (AUTHOR && AUTHOR.attr('Content')) {
+            const PATTERN_EMAIL = /\b[a-z0-9\._%+\-]+@[a-z0-9\.\-]+\.[a-z]{2,}\b/i, // regex from http://www.regular-expressions.info/email.html
+                ADDRESS = PATTERN_EMAIL.exec(AUTHOR.attr('Content'));
+            if (ADDRESS) {
+                const URL = 'https://www.gravatar.com/avatar/' + CryptoJS.MD5(ADDRESS[0].toLowerCase()) + '?d=404',
+                    GRAVATAR = $('#gravatar');
+                GRAVATAR.load(function() {
+                    GRAVATAR.addClass('active');
+                });
+                GRAVATAR.attr('src', URL);
+            }
+        }
+
         if (OPT_MD.length) toggleFormatting();
         OPT_MD.change(toggleFormatting);
         OPTS_THREAD.change(toggleThread);
@@ -76,9 +92,10 @@ const init = function($, markdownit) {
 requirejs.config({
     paths: {
         jquery: 'https://www.w3.org/scripts/jquery/2.1/jquery.min',
-        'markdown-it': 'https://cdnjs.cloudflare.com/ajax/libs/markdown-it/6.0.0/markdown-it.min'
+        'markdown-it': 'https://cdnjs.cloudflare.com/ajax/libs/markdown-it/6.0.0/markdown-it.min',
+        'cryptojs-md5': '../js/md5' // downloaded from https://code.google.com/archive/p/crypto-js/downloads
     }
 });
 
 // Load dependencies asynchronously via RequireJS:
-requirejs(['jquery', 'markdown-it'], init);
+requirejs(['jquery', 'markdown-it', 'cryptojs-md5'], init);
