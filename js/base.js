@@ -34,8 +34,24 @@ const init = function($, markdownit) {
             MESSAGE = $('#body'),
             OPTIONS = $('form#options'),
             OPT_MD = $('input#markdown'),
+            OPTS_THREAD = $(':radio[name="thread"]'),
             ORIGINAL = MESSAGE.text(),
-            ENHANCED = MDIT.render(processOriginal(ORIGINAL));
+            ENHANCED = MDIT.render(processOriginal(ORIGINAL)),
+            MESSAGE_CONTAINER = $('div#message-container'),
+            THREAD_CONTAINER = $('div#thread-container');
+
+        const toggleThread = function(event) {
+            const OPTION = event.target.value;
+            if ('no' === OPTION) {
+                MESSAGE_CONTAINER.removeClass('col-md-8').addClass('col-md-12');
+                THREAD_CONTAINER.removeClass('col-md-4').hide();
+            } else if ('flat' === OPTION) {
+            } else {
+                // ie, 'tree' === OPTION
+                MESSAGE_CONTAINER.removeClass('col-md-12').addClass('col-md-8');
+                THREAD_CONTAINER.addClass('col-md-4').show();
+            }
+        };
 
         const toggleFormatting = function() {
             if (OPT_MD[0].checked) {
@@ -47,8 +63,9 @@ const init = function($, markdownit) {
             }
         };
 
-        toggleFormatting();
+        if (OPT_MD.length) toggleFormatting();
         OPT_MD.change(toggleFormatting);
+        OPTS_THREAD.change(toggleThread);
         OPTIONS.addClass('active');
 
     });
