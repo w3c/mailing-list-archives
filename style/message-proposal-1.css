@@ -104,13 +104,6 @@ p.spamfooter{
 div#body {
     display: block;
     unicode-bidi: embed;
-    font-family: monospace;
-    white-space: pre;
-    white-space: pre-wrap;       /* css-3 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
     background: white;
     padding: 0.5em;
     margin-top: 0.5em;
@@ -207,4 +200,53 @@ nav#gutter-top > .container-fluid {
 
 div#main {
   margin-top: 71px;
+}
+
+/*
+ * Styles for the Markdown formatting feature
+ */
+
+form#options {
+  display: none;
+  float: right;
+  width: 33.3%;
+}
+
+form#options.active {
+  display: block;
+}
+
+form#options img {
+  height: 1em;
+}
+
+form#options label {
+  font-weight: normal;
+}
+
+div#body:not(.rich) {
+  font-family: monospace;
+  white-space: pre;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+div#body pre {
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: inherit;
+  background-color: inherit;
+}
+
+div#body code {
+  background-color: inherit;
+}
+
+div#body blockquote {
+  font-style: italic;
+  font-size: inherit;
 }
