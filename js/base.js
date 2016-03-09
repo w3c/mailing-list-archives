@@ -41,7 +41,17 @@ const init = function($, markdownit) {
             ENHANCED = MDIT.render(processOriginal(ORIGINAL)),
             MESSAGE_CONTAINER = $('div#message-container'),
             THREAD_CONTAINER = $('div#thread-container'),
-            AUTHOR = $('meta[name="Author"]');
+            AUTHOR = $('meta[name="Author"]'),
+            ROW_DETAILED = $('.headers .detailed'),
+            ROW_GUTTER = $('#gutter'),
+            GUTTER = $('a', ROW_GUTTER),
+            GUTTER_GLYPH = $('#glyph'),
+            TR_UP_FULL = '&#9650;',
+            TR_UP_EMPTY = '&#9651;',
+            TR_DOWN_FULL = '&#9660;',
+            TR_DOWN_EMPTY = '&#9661;';
+
+        var detailsVisible = true;
 
         const toggleThread = function(event) {
             const OPTION = event.target.value;
@@ -66,6 +76,35 @@ const init = function($, markdownit) {
             }
         };
 
+        const highlightGutter = function(event) {
+            if (event && 'mouseenter' === event.type) {
+                if (detailsVisible) {
+                    GUTTER_GLYPH.html(TR_UP_FULL);
+                } else {
+                    GUTTER_GLYPH.html(TR_DOWN_FULL);
+                }
+            } else {
+                // ie, 'mouseleave' === event.type
+                if (detailsVisible) {
+                    GUTTER_GLYPH.html(TR_UP_EMPTY);
+                } else {
+                    GUTTER_GLYPH.html(TR_DOWN_EMPTY);
+                }
+            }
+        };
+
+        const toggleDetails = function() {
+            detailsVisible = !detailsVisible;
+            if (detailsVisible) {
+                ROW_DETAILED.removeClass('hidden');
+                GUTTER_GLYPH.html(TR_UP_EMPTY);
+            } else {
+                ROW_DETAILED.addClass('hidden');
+                GUTTER_GLYPH.html(TR_DOWN_EMPTY);
+            }
+            return false;
+        };
+
         if (AUTHOR && AUTHOR.attr('Content')) {
             const PATTERN_EMAIL = /\b[a-z0-9\._%+\-]+@[a-z0-9\.\-]+\.[a-z]{2,}\b/i, // regex from http://www.regular-expressions.info/email.html
                 ADDRESS = PATTERN_EMAIL.exec(AUTHOR.attr('Content'));
@@ -82,6 +121,10 @@ const init = function($, markdownit) {
         if (OPT_MD.length) toggleFormatting();
         OPT_MD.change(toggleFormatting);
         OPTS_THREAD.change(toggleThread);
+        GUTTER.hover(highlightGutter);
+        GUTTER.click(toggleDetails);
+        ROW_GUTTER.removeClass('hidden');
+        toggleDetails();
         OPTIONS.addClass('active');
 
     });

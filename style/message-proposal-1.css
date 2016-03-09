@@ -60,7 +60,6 @@ div.issue {
 ** but can't
 */
 
-dfn {font-weight: bold;}
 .mail, .head { border-bottom:1px solid black;}
 map ul {list-style:none;}
 #message-id { font-size: small;}
@@ -123,6 +122,9 @@ div.message {
 h1 {
     margin-top: 0;
     font-size: 150%;
+    text-shadow: .05em 0 .05em #808080;
+    font-style: italic;
+    font-family: serif;
 }
 
 a:hover {
@@ -264,4 +266,41 @@ div#body blockquote {
 
 #gravatar.active {
   visibility: visible;
+}
+
+/**
+ * Styles to improve the message headers
+ */
+
+.headers .key {
+  font-weight: bold;
+}
+
+.headers .value {
+  color: #606060;
+}
+
+.headers .name {
+  color: #000000;
+}
+
+.headers code {
+  font-size: 1em;
+  padding-left: 0;
+  background-color: transparent;
+  color: #606060;
+}
+
+#gutter {
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+}
+
+#gutter a:hover #glyph {
+  background-color: #f8f8f8;
+}
+
+.headers .hidden {
+  visibility: hidden;
 }
