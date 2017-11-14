@@ -89,3 +89,4 @@ Feel free to [raise new
 issues](https://github.com/w3c/mailing-list-archives/issues)
 related to our archives as well.
 
+See also [proposed improvements to the mailing lists archives (2002/2003)](https://www.w3.org/2002/03/archives-improvements/).
